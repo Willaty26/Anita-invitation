@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import mapImage from "@/assets/ros-niyom-map.jpg.asset.json";
 
 const ADDRESS = "10-91 Jackson Ave, Long Island City, NY 11101";
-const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`;
-const MAPS_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`;
+const VENUE_QUERY = "Ros Niyom Thai Restaurant, 10-91 Jackson Ave, Long Island City, NY 11101";
+const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(VENUE_QUERY)}`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -184,24 +185,20 @@ function Invitation() {
               <CornerMark className="-left-1.5 -bottom-1.5 text-[#f4f1e8]" />
               <CornerMark className="-right-1.5 -bottom-1.5 text-[#f4f1e8]" />
               <div className="relative overflow-hidden">
-                <iframe
-                  title="Map to Ros Niyom Thai Restaurant"
-                  src={MAPS_EMBED}
-                  className="block h-64 w-full sm:h-80"
-                  style={{
-                    border: 0,
-                    filter:
-                      "grayscale(1) invert(0.92) sepia(0.4) hue-rotate(180deg) saturate(2.5) brightness(0.85) contrast(1.05)",
-                  }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
+                <a href={MAPS_LINK} target="_blank" rel="noreferrer" aria-label="Open Ros Niyom Thai Restaurant in Google Maps">
+                  <img
+                    src={mapImage.url}
+                    alt="Map to Ros Niyom Thai Restaurant, 10-91 Jackson Ave, Long Island City, NY"
+                    className="block h-64 w-full object-cover sm:h-80"
+                    loading="lazy"
+                  />
+                </a>
                 <div
                   aria-hidden
                   className="pointer-events-none absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(13,42,82,0.25), rgba(13,42,82,0.1) 40%, rgba(13,42,82,0.35))",
+                      "linear-gradient(180deg, rgba(13,42,82,0.20), rgba(13,42,82,0.05) 40%, rgba(13,42,82,0.30))",
                   }}
                 />
               </div>
