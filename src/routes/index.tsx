@@ -169,9 +169,8 @@ function Invitation() {
           <dl className="mx-auto grid max-w-xl grid-cols-1 gap-y-5 sm:grid-cols-[110px_1fr] sm:gap-x-6">
             <DetailRow label="Date" value="Monday · June 29" />
             <DetailRow label="Time" value="12:00 PM – 2:00 PM" />
-            <DetailRow label="Venue" value="The Bordone LIC" />
+            <DetailRow label="Venue" value="Ros Niyom Thai Restaurant" />
             <DetailRow label="Address" value={ADDRESS} mono />
-            <DetailRow label="Attire" value="Cocktail · Blueprint Blue Encouraged" />
           </dl>
 
           {/* Map */}
@@ -186,7 +185,7 @@ function Invitation() {
               <CornerMark className="-right-1.5 -bottom-1.5 text-[#f4f1e8]" />
               <div className="relative overflow-hidden">
                 <iframe
-                  title="Map to The Bordone LIC"
+                  title="Map to Ros Niyom Thai Restaurant"
                   src={MAPS_EMBED}
                   className="block h-64 w-full sm:h-80"
                   style={{
