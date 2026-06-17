@@ -167,8 +167,8 @@ function Invitation() {
 
           {/* Details cartouche */}
           <dl className="mx-auto grid max-w-xl grid-cols-1 gap-y-5 sm:grid-cols-[110px_1fr] sm:gap-x-6">
-            <DetailRow label="Date" value="Saturday · [Date TBC]" />
-            <DetailRow label="Time" value="6:00 PM" />
+            <DetailRow label="Date" value="Monday · June 29" />
+            <DetailRow label="Time" value="12:00 PM – 2:00 PM" />
             <DetailRow label="Venue" value="The Bordone LIC" />
             <DetailRow label="Address" value={ADDRESS} mono />
             <DetailRow label="Attire" value="Cocktail · Blueprint Blue Encouraged" />
@@ -216,25 +216,7 @@ function Invitation() {
               >
                 Get Directions
               </a>
-              <a
-                href="#rsvp"
-                className="border border-[#f4f1e8]/70 bg-[#f4f1e8] px-5 py-2 text-[11px] uppercase tracking-[0.28em] text-[#0d2a52] transition hover:bg-transparent hover:text-[#f4f1e8]"
-              >
-                RSVP
-              </a>
             </div>
-          </div>
-
-          {/* RSVP */}
-          <div id="rsvp" className="mx-auto mt-12 max-w-md text-center">
-            <p className="text-[10px] uppercase tracking-[0.32em] text-[#f4f1e8]/70">
-              Kindly Respond
-            </p>
-            <p className="mt-3 font-[Cormorant_Garamond,serif] text-xl italic text-[#f4f1e8]/95">
-              Please confirm your attendance by
-              <br />
-              [RSVP Date] · [Contact Name & Number]
-            </p>
           </div>
 
           {/* Footer key */}
