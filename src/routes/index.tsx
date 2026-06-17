@@ -218,7 +218,15 @@ function Invitation() {
           {/* Footer key */}
           <div className="mt-12 flex flex-col items-center gap-2 border-t border-[#f4f1e8]/25 pt-6 text-[10px] uppercase tracking-[0.3em] text-[#f4f1e8]/60">
             <span>Drawing No. AWA-2026 · Sheet 01 of 01</span>
-            <span>Celebrating a Remarkable Career</span>
+            <span className="text-[#f4f1e8]/85">Celebrating a Remarkable Career</span>
+            <div className="mt-3 flex flex-col items-center gap-1.5 font-[Cormorant_Garamond,serif] text-sm normal-case tracking-[0.08em] text-[#f4f1e8]/90 sm:text-base">
+              <span>Washington CC · Tompkins CC · Parkside CC</span>
+              <span>McKinley Roofing · Castle Hill Roofing</span>
+              <span>Pelham Parkway Roofing</span>
+              <span>Various Antenna Reviews</span>
+              <span>Zoning Studies for Various Wasteyards</span>
+              <span>Queens Public Library</span>
+            </div>
           </div>
         </div>
       </div>
