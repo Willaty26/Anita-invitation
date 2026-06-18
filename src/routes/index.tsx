@@ -42,7 +42,7 @@ function CornerMark({ className }: { className: string }) {
 
 function Invitation() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#0d2a52] text-[#f4f1e8] font-[Inter,sans-serif]">
+    <main className="relative min-h-screen overflow-hidden bg-[#1e4a8c] text-[#f4f1e8] font-[Inter,sans-serif]">
       {/* Blueprint grid */}
       <div
         aria-hidden
@@ -198,7 +198,7 @@ function Invitation() {
                   className="pointer-events-none absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(13,42,82,0.20), rgba(13,42,82,0.05) 40%, rgba(13,42,82,0.30))",
+                      "linear-gradient(180deg, rgba(30,74,140,0.20), rgba(30,74,140,0.05) 40%, rgba(30,74,140,0.30))",
                   }}
                 />
               </div>
@@ -208,7 +208,7 @@ function Invitation() {
                 href={MAPS_LINK}
                 target="_blank"
                 rel="noreferrer"
-                className="border border-[#f4f1e8]/70 px-5 py-2 text-[11px] uppercase tracking-[0.28em] text-[#f4f1e8] transition hover:bg-[#f4f1e8] hover:text-[#0d2a52]"
+                className="border border-[#f4f1e8]/70 px-5 py-2 text-[11px] uppercase tracking-[0.28em] text-[#f4f1e8] transition hover:bg-[#f4f1e8] hover:text-[#1e4a8c]"
               >
                 Get Directions
               </a>
