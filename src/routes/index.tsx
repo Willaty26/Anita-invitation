@@ -156,22 +156,34 @@ function Invitation() {
               <span className="h-px w-16 sm:w-28" style={{ background: `${CREAM_WARM}99` }} />
             </div>
 
-            <div className="mx-auto mb-5 w-[120px] sm:w-[140px]">
+            <div className="mx-auto mb-6 w-[140px] sm:w-[160px]">
               <div
-                className="relative p-1"
+                className="relative"
                 style={{
-                  background: CREAM_WARM,
-                  border: `1px solid ${CREAM_WARM}66`,
-                  outline: `1px solid ${CREAM_WARM}26`,
+                  padding: "10px",
+                  border: `1px solid ${CREAM_WARM}80`,
+                  outline: `1px solid ${CREAM_WARM}40`,
                   outlineOffset: "4px",
+                  boxShadow: `0 8px 24px -10px rgba(0,0,0,0.4)`,
                 }}
               >
-                <img
-                  src={celebrationImage.url}
-                  alt="Anita Wright-Antoine"
-                  className="block aspect-[4/5] w-full object-cover"
-                  loading="lazy"
-                />
+                <CornerMark className="-left-1.5 -top-1.5" />
+                <CornerMark className="-right-1.5 -top-1.5" />
+                <CornerMark className="-left-1.5 -bottom-1.5" />
+                <CornerMark className="-right-1.5 -bottom-1.5" />
+                <div
+                  className="relative p-[3px]"
+                  style={{ background: CREAM_WARM }}
+                >
+                  <div style={{ border: `1px solid ${BLUE_DEEP}55`, padding: "2px" }}>
+                    <img
+                      src={celebrationImage.url}
+                      alt="Anita Wright-Antoine"
+                      className="block aspect-[4/5] w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
