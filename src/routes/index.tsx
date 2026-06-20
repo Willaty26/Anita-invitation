@@ -189,14 +189,14 @@ function Invitation() {
           </p>
           <Ornament />
 
-          <div className="mx-auto mt-2 w-full max-w-md">
+          <div className="mx-auto mt-2 w-full max-w-[220px] sm:max-w-[260px]">
             <div
-              className="relative p-2"
+              className="relative p-1.5"
               style={{
                 background: CREAM_WARM,
                 border: `1px solid ${BLUE}55`,
                 outline: `1px solid ${BLUE}1f`,
-                outlineOffset: "6px",
+                outlineOffset: "5px",
               }}
             >
               <div className="relative overflow-hidden">
