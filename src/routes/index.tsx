@@ -110,19 +110,17 @@ function Invitation() {
             <CornerMark className="-left-2 -bottom-2" />
             <CornerMark className="-right-2 -bottom-2" />
 
-            {/* Monogram */}
+            {/* Building logo */}
             <div className="mb-6 flex justify-center">
-              <div
-                className="flex h-16 w-16 items-center justify-center rounded-full sm:h-20 sm:w-20"
-                style={{ border: `1px solid ${CREAM_WARM}80` }}
-              >
-                <span
-                  className="font-[Cormorant_Garamond,serif] text-2xl italic sm:text-3xl"
-                  style={{ color: CREAM_WARM, letterSpacing: "0.05em" }}
-                >
-                  AW
-                </span>
-              </div>
+              <svg width="52" height="52" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M24 6 L40 18 L40 42 L8 42 L8 18 Z" stroke={CREAM_WARM} strokeWidth="1.5" fill="none"/>
+                <rect x="14" y="24" width="5" height="6" fill={CREAM_WARM}/>
+                <rect x="21.5" y="24" width="5" height="6" fill={CREAM_WARM}/>
+                <rect x="29" y="24" width="5" height="6" fill={CREAM_WARM}/>
+                <rect x="14" y="33" width="5" height="6" fill={CREAM_WARM}/>
+                <rect x="21.5" y="33" width="5" height="9" fill={CREAM_WARM}/>
+                <rect x="29" y="33" width="5" height="6" fill={CREAM_WARM}/>
+              </svg>
             </div>
 
             <p
