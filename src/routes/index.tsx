@@ -156,12 +156,32 @@ function Invitation() {
               <span className="h-px w-16 sm:w-28" style={{ background: `${CREAM_WARM}99` }} />
             </div>
 
+            <div className="mx-auto mb-5 w-[120px] sm:w-[140px]">
+              <div
+                className="relative p-1"
+                style={{
+                  background: CREAM_WARM,
+                  border: `1px solid ${CREAM_WARM}66`,
+                  outline: `1px solid ${CREAM_WARM}26`,
+                  outlineOffset: "4px",
+                }}
+              >
+                <img
+                  src={celebrationImage.url}
+                  alt="Anita Wright-Antoine"
+                  className="block aspect-[4/5] w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
             <p
               className="text-center text-xs uppercase sm:text-sm"
               style={{ letterSpacing: "0.45em", color: `${CREAM_WARM}d9` }}
             >
               In Honor of
             </p>
+
             <p
               className="mt-3 text-center font-[Cormorant_Garamond,serif] text-3xl font-medium sm:text-5xl"
               style={{ color: CREAM_WARM, letterSpacing: "0.01em" }}
@@ -179,55 +199,8 @@ function Invitation() {
           </div>
         </section>
 
-        {/* ============ PORTRAIT (Guest of Honor) ============ */}
-        <Card>
-          <p
-            className="text-center text-[10px] uppercase"
-            style={{ letterSpacing: "0.4em", color: `${BLUE}b3` }}
-          >
-            Honoring Our Retiree
-          </p>
-          <Ornament />
 
-          <div className="mx-auto mt-2 w-full max-w-[220px] sm:max-w-[260px]">
-            <div
-              className="relative p-1.5"
-              style={{
-                background: CREAM_WARM,
-                border: `1px solid ${BLUE}55`,
-                outline: `1px solid ${BLUE}1f`,
-                outlineOffset: "5px",
-              }}
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={celebrationImage.url}
-                  alt="Anita Wright-Antoine"
-                  className="block aspect-[4/5] w-full object-cover"
-                  loading="lazy"
-                />
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0"
-                  style={{ boxShadow: `inset 0 0 0 1px ${INK}1a` }}
-                />
-              </div>
-            </div>
-          </div>
 
-          <p
-            className="mt-6 text-center font-[Cormorant_Garamond,serif] text-2xl sm:text-3xl"
-            style={{ color: BLUE }}
-          >
-            Anita Wright-Antoine
-          </p>
-          <p
-            className="mt-1 text-center text-[10px] uppercase"
-            style={{ letterSpacing: "0.4em", color: `${INK}99` }}
-          >
-            Decades of Service · NYCHA
-          </p>
-        </Card>
 
         {/* ============ DETAILS (cream) ============ */}
         <Card>
