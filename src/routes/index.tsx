@@ -199,55 +199,8 @@ function Invitation() {
           </div>
         </section>
 
-        {/* ============ PORTRAIT (Guest of Honor) ============ */}
-        <Card>
-          <p
-            className="text-center text-[10px] uppercase"
-            style={{ letterSpacing: "0.4em", color: `${BLUE}b3` }}
-          >
-            Honoring Our Retiree
-          </p>
-          <Ornament />
 
-          <div className="mx-auto mt-2 w-full max-w-[220px] sm:max-w-[260px]">
-            <div
-              className="relative p-1.5"
-              style={{
-                background: CREAM_WARM,
-                border: `1px solid ${BLUE}55`,
-                outline: `1px solid ${BLUE}1f`,
-                outlineOffset: "5px",
-              }}
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={celebrationImage.url}
-                  alt="Anita Wright-Antoine"
-                  className="block aspect-[4/5] w-full object-cover"
-                  loading="lazy"
-                />
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0"
-                  style={{ boxShadow: `inset 0 0 0 1px ${INK}1a` }}
-                />
-              </div>
-            </div>
-          </div>
 
-          <p
-            className="mt-6 text-center font-[Cormorant_Garamond,serif] text-2xl sm:text-3xl"
-            style={{ color: BLUE }}
-          >
-            Anita Wright-Antoine
-          </p>
-          <p
-            className="mt-1 text-center text-[10px] uppercase"
-            style={{ letterSpacing: "0.4em", color: `${INK}99` }}
-          >
-            Decades of Service · NYCHA
-          </p>
-        </Card>
 
         {/* ============ DETAILS (cream) ============ */}
         <Card>
