@@ -185,7 +185,7 @@ function Invitation() {
             className="text-center text-[10px] uppercase"
             style={{ letterSpacing: "0.4em", color: `${BLUE}b3` }}
           >
-            Guest of Honor
+            Honoring Our Retiree
           </p>
           <Ornament />
 
