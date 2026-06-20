@@ -1,12 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import mapImage from "@/assets/ros-niyom-map.jpg.asset.json";
+import celebrationImage from "@/assets/celebration.webp.asset.json";
 
 const ADDRESS = "10-91 Jackson Ave, Long Island City, NY 11101";
 const VENUE_QUERY = "Ros Niyom Thai Restaurant, 10-91 Jackson Ave, Long Island City, NY 11101";
 const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(VENUE_QUERY)}`;
 
 const BLUE = "#1e4a8c";
+const BLUE_DEEP = "#163a73";
 const CREAM = "#faf8f3";
+const CREAM_WARM = "#f4f1e8";
 const INK = "#1a2a44";
 
 export const Route = createFileRoute("/")({
@@ -28,7 +31,7 @@ export const Route = createFileRoute("/")({
   component: Invitation,
 });
 
-function CornerMark({ className, color = "#f4f1e8" }: { className: string; color?: string }) {
+function CornerMark({ className, color = CREAM_WARM }: { className: string; color?: string }) {
   return (
     <span
       className={`absolute h-4 w-4 ${className}`}
@@ -45,20 +48,41 @@ function CornerMark({ className, color = "#f4f1e8" }: { className: string; color
   );
 }
 
+function Ornament({ color = BLUE }: { color?: string }) {
+  return (
+    <div className="my-2 flex items-center justify-center gap-3" aria-hidden>
+      <span className="h-px w-14 sm:w-20" style={{ background: `${color}55` }} />
+      <svg width="22" height="10" viewBox="0 0 22 10" fill="none">
+        <path
+          d="M1 5 Q5.5 1 11 5 Q16.5 9 21 5"
+          stroke={color}
+          strokeWidth="0.8"
+          fill="none"
+          opacity="0.7"
+        />
+        <circle cx="11" cy="5" r="1.4" fill={color} opacity="0.8" />
+      </svg>
+      <span className="h-px w-14 sm:w-20" style={{ background: `${color}55` }} />
+    </div>
+  );
+}
+
 function Invitation() {
   return (
     <main
       className="min-h-screen font-[Inter,sans-serif]"
       style={{ background: CREAM, color: INK }}
     >
-      <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-8 px-5 py-10 sm:py-16">
+      <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-10 px-5 py-12 sm:gap-12 sm:py-20">
 
         {/* ============ COVER (blue) ============ */}
         <section
-          className="relative w-full overflow-hidden px-6 py-12 sm:px-12 sm:py-18"
-          style={{ background: BLUE, color: "#f4f1e8" }}
+          className="relative w-full overflow-hidden px-6 py-14 sm:px-14 sm:py-20"
+          style={{
+            background: `linear-gradient(180deg, ${BLUE} 0%, ${BLUE_DEEP} 100%)`,
+            color: CREAM_WARM,
+          }}
         >
-          {/* Blueprint grid */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 opacity-[0.12]"
@@ -73,59 +97,83 @@ function Invitation() {
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.45) 100%)",
+                "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.5) 100%)",
             }}
           />
 
-          <div className="relative border border-[#f4f1e8]/40 px-4 py-8 sm:px-8 sm:py-10">
+          <div
+            className="relative px-4 py-10 sm:px-10 sm:py-12"
+            style={{ border: `1px solid ${CREAM_WARM}66`, outline: `1px solid ${CREAM_WARM}1f`, outlineOffset: "6px" }}
+          >
             <CornerMark className="-left-2 -top-2" />
             <CornerMark className="-right-2 -top-2" />
             <CornerMark className="-left-2 -bottom-2" />
             <CornerMark className="-right-2 -bottom-2" />
 
-            <div className="mb-5 flex justify-center">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden>
-                <path d="M24 6 L40 18 L40 42 L8 42 L8 18 Z" stroke="#f4f1e8" strokeWidth="1.5" fill="none" />
-                <rect x="14" y="24" width="5" height="6" fill="#f4f1e8" />
-                <rect x="21.5" y="24" width="5" height="6" fill="#f4f1e8" />
-                <rect x="29" y="24" width="5" height="6" fill="#f4f1e8" />
-                <rect x="14" y="33" width="5" height="6" fill="#f4f1e8" />
-                <rect x="21.5" y="33" width="5" height="9" fill="#f4f1e8" />
-                <rect x="29" y="33" width="5" height="6" fill="#f4f1e8" />
-              </svg>
+            {/* Monogram */}
+            <div className="mb-6 flex justify-center">
+              <div
+                className="flex h-16 w-16 items-center justify-center rounded-full sm:h-20 sm:w-20"
+                style={{ border: `1px solid ${CREAM_WARM}80` }}
+              >
+                <span
+                  className="font-[Cormorant_Garamond,serif] text-2xl italic sm:text-3xl"
+                  style={{ color: CREAM_WARM, letterSpacing: "0.05em" }}
+                >
+                  AW
+                </span>
+              </div>
             </div>
 
-            <p className="text-center text-[10px] font-medium uppercase tracking-[0.32em] text-[#f4f1e8]/85 sm:text-xs">
+            <p
+              className="text-center text-[10px] font-medium uppercase sm:text-xs"
+              style={{ letterSpacing: "0.4em", color: `${CREAM_WARM}d9` }}
+            >
               New York City Housing Authority
             </p>
 
-            <div className="my-5 flex items-center justify-center gap-3">
-              <span className="h-px w-12 bg-[#f4f1e8]/50 sm:w-20" />
-              <span className="text-[10px] uppercase tracking-[0.4em] text-[#f4f1e8]/70">
+            <div className="my-6 flex items-center justify-center gap-3">
+              <span className="h-px w-14 sm:w-24" style={{ background: `${CREAM_WARM}80` }} />
+              <span
+                className="text-[10px] uppercase"
+                style={{ letterSpacing: "0.45em", color: `${CREAM_WARM}b3` }}
+              >
                 Cordially Invites You
               </span>
-              <span className="h-px w-12 bg-[#f4f1e8]/50 sm:w-20" />
+              <span className="h-px w-14 sm:w-24" style={{ background: `${CREAM_WARM}80` }} />
             </div>
 
-            <h1 className="text-center font-[Cormorant_Garamond,serif] text-5xl font-semibold leading-[0.95] tracking-tight text-[#f4f1e8] sm:text-7xl">
+            <h1
+              className="text-center font-[Cormorant_Garamond,serif] text-5xl font-light leading-[0.95] sm:text-7xl"
+              style={{ color: CREAM_WARM, letterSpacing: "-0.01em" }}
+            >
               Retirement
               <br />
-              Celebration
+              <em className="font-medium italic">Celebration</em>
             </h1>
 
-            <div className="mx-auto my-6 flex items-center justify-center gap-3">
-              <span className="h-px w-16 bg-[#f4f1e8]/60 sm:w-24" />
-              <span className="h-1.5 w-1.5 rotate-45 bg-[#f4f1e8]/80" />
-              <span className="h-px w-16 bg-[#f4f1e8]/60 sm:w-24" />
+            <div className="mx-auto my-7 flex items-center justify-center gap-3">
+              <span className="h-px w-16 sm:w-28" style={{ background: `${CREAM_WARM}99` }} />
+              <span className="h-1.5 w-1.5 rotate-45" style={{ background: CREAM_WARM }} />
+              <span className="h-px w-16 sm:w-28" style={{ background: `${CREAM_WARM}99` }} />
             </div>
 
-            <p className="text-center text-sm uppercase tracking-[0.28em] text-[#f4f1e8]/85">
+            <p
+              className="text-center text-xs uppercase sm:text-sm"
+              style={{ letterSpacing: "0.45em", color: `${CREAM_WARM}d9` }}
+            >
               In Honor of
             </p>
-            <p className="mt-2 text-center font-[Cormorant_Garamond,serif] text-3xl font-semibold text-[#f4f1e8] sm:text-4xl">
+            <p
+              className="mt-3 text-center font-[Cormorant_Garamond,serif] text-3xl font-medium sm:text-5xl"
+              style={{ color: CREAM_WARM, letterSpacing: "0.01em" }}
+            >
               Anita Wright-Antoine
             </p>
-            <p className="mx-auto mt-3 max-w-md text-center font-[Cormorant_Garamond,serif] text-lg italic text-[#f4f1e8]/90 sm:text-xl">
+            <p
+              className="mx-auto mt-4 max-w-md text-center font-[Cormorant_Garamond,serif] text-lg italic sm:text-xl"
+              style={{ color: `${CREAM_WARM}e6` }}
+            >
               A Blueprint of Memories
               <br />
               and a Legacy of Excellence
@@ -133,22 +181,61 @@ function Invitation() {
           </div>
         </section>
 
-        {/* ============ DETAILS (cream) ============ */}
+        {/* ============ PORTRAIT (Guest of Honor) ============ */}
         <Card>
-          <div className="mx-auto mb-5 flex flex-col items-center opacity-70" style={{ color: BLUE }}>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path
-                d="M12 2 L4 22 L20 22 Z M12 8 L8 22 M12 8 L16 22 M7 18 L17 18"
-                stroke="currentColor"
-                strokeWidth="1"
-              />
-            </svg>
-            <span className="mt-2 h-px w-40 sm:w-56" style={{ background: "rgba(30,74,140,0.4)" }} />
+          <p
+            className="text-center text-[10px] uppercase"
+            style={{ letterSpacing: "0.4em", color: `${BLUE}b3` }}
+          >
+            Guest of Honor
+          </p>
+          <Ornament />
+
+          <div className="mx-auto mt-2 w-full max-w-md">
+            <div
+              className="relative p-2"
+              style={{
+                background: CREAM_WARM,
+                border: `1px solid ${BLUE}55`,
+                outline: `1px solid ${BLUE}1f`,
+                outlineOffset: "6px",
+              }}
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={celebrationImage.url}
+                  alt="Anita Wright-Antoine"
+                  className="block aspect-[4/5] w-full object-cover"
+                  loading="lazy"
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0"
+                  style={{ boxShadow: `inset 0 0 0 1px ${INK}1a` }}
+                />
+              </div>
+            </div>
           </div>
 
-          <SectionTitle>The Details</SectionTitle>
+          <p
+            className="mt-6 text-center font-[Cormorant_Garamond,serif] text-2xl sm:text-3xl"
+            style={{ color: BLUE }}
+          >
+            Anita Wright-Antoine
+          </p>
+          <p
+            className="mt-1 text-center text-[10px] uppercase"
+            style={{ letterSpacing: "0.4em", color: `${INK}99` }}
+          >
+            Decades of Service · NYCHA
+          </p>
+        </Card>
 
-          <dl className="mx-auto grid max-w-xl grid-cols-1 gap-y-5 sm:grid-cols-[110px_1fr] sm:gap-x-6">
+        {/* ============ DETAILS (cream) ============ */}
+        <Card>
+          <SectionTitle eyebrow="The Invitation">The Details</SectionTitle>
+
+          <dl className="mx-auto grid max-w-xl grid-cols-1 gap-y-5 sm:grid-cols-[120px_1fr] sm:gap-x-8">
             <DetailRow label="Date" value="Monday · June 29" />
             <DetailRow label="Time" value="12:00 PM – 2:00 PM" />
             <DetailRow label="Venue" value="Ros Niyom Thai Restaurant" />
@@ -158,16 +245,23 @@ function Invitation() {
 
         {/* ============ MAP (cream) ============ */}
         <Card>
-          <SectionTitle>Find Us</SectionTitle>
+          <SectionTitle eyebrow="Location">Find Us</SectionTitle>
 
           <div className="relative mx-auto w-full max-w-xl">
             <div
-              className="absolute -left-1.5 -top-5 text-[10px] uppercase tracking-[0.3em]"
-              style={{ color: BLUE }}
+              className="absolute -left-1 -top-5 text-[10px] uppercase"
+              style={{ letterSpacing: "0.35em", color: BLUE }}
             >
               Plot · 01
             </div>
-            <div className="relative p-1.5" style={{ border: `1px solid ${BLUE}55` }}>
+            <div
+              className="relative p-1.5"
+              style={{
+                border: `1px solid ${BLUE}55`,
+                outline: `1px solid ${BLUE}1f`,
+                outlineOffset: "5px",
+              }}
+            >
               <div className="relative overflow-hidden">
                 <a
                   href={MAPS_LINK}
@@ -184,13 +278,18 @@ function Invitation() {
                 </a>
               </div>
             </div>
-            <div className="mt-4 flex flex-wrap justify-center gap-3">
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
               <a
                 href={MAPS_LINK}
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 py-2.5 text-[11px] uppercase tracking-[0.28em] transition"
-                style={{ background: BLUE, color: "#f4f1e8", border: `1px solid ${BLUE}` }}
+                className="px-7 py-3 text-[11px] uppercase transition hover:opacity-90"
+                style={{
+                  background: BLUE,
+                  color: CREAM_WARM,
+                  border: `1px solid ${BLUE}`,
+                  letterSpacing: "0.32em",
+                }}
               >
                 Get Directions
               </a>
@@ -201,15 +300,18 @@ function Invitation() {
         {/* ============ LEGACY (cream) ============ */}
         <Card>
           <div className="text-center">
-            <SectionTitle>Celebrating a Remarkable Career</SectionTitle>
+            <SectionTitle eyebrow="Her Legacy">Celebrating a Remarkable Career</SectionTitle>
+
+            <Ornament />
+
             <p
-              className="mb-4 text-[10px] uppercase tracking-[0.3em]"
-              style={{ color: "rgba(30,74,140,0.7)" }}
+              className="mt-4 mb-5 text-[10px] uppercase"
+              style={{ letterSpacing: "0.4em", color: `${BLUE}b3` }}
             >
               Projects &amp; Milestones
             </p>
             <div
-              className="flex flex-col items-center gap-2 font-[Cormorant_Garamond,serif] text-base sm:text-lg"
+              className="flex flex-col items-center gap-2.5 font-[Cormorant_Garamond,serif] text-lg leading-relaxed sm:text-xl"
               style={{ color: INK }}
             >
               <span>Washington CC · Tompkins CC · Parkside CC</span>
@@ -222,12 +324,15 @@ function Invitation() {
           </div>
         </Card>
 
-        <p
-          className="text-center text-[10px] uppercase tracking-[0.3em]"
-          style={{ color: "rgba(30,74,140,0.55)" }}
-        >
-          Drawing No. AWA-2026 · Sheet 01 of 01
-        </p>
+        <div className="flex flex-col items-center gap-2">
+          <Ornament />
+          <p
+            className="text-center text-[10px] uppercase"
+            style={{ letterSpacing: "0.4em", color: `${BLUE}8c` }}
+          >
+            Drawing No. AWA-2026 · Sheet 01 of 01
+          </p>
+        </div>
       </div>
     </main>
   );
@@ -236,8 +341,13 @@ function Invitation() {
 function Card({ children }: { children: React.ReactNode }) {
   return (
     <section
-      className="relative w-full px-6 py-8 sm:px-10 sm:py-10"
-      style={{ background: CREAM, border: `1px solid ${BLUE}40` }}
+      className="relative w-full px-6 py-10 sm:px-12 sm:py-14"
+      style={{
+        background: CREAM,
+        border: `1px solid ${BLUE}40`,
+        outline: `1px solid ${BLUE}14`,
+        outlineOffset: "6px",
+      }}
     >
       <CornerMark className="-left-2 -top-2" color={BLUE} />
       <CornerMark className="-right-2 -top-2" color={BLUE} />
@@ -248,14 +358,30 @@ function Card({ children }: { children: React.ReactNode }) {
   );
 }
 
-function SectionTitle({ children }: { children: React.ReactNode }) {
+function SectionTitle({
+  children,
+  eyebrow,
+}: {
+  children: React.ReactNode;
+  eyebrow?: string;
+}) {
   return (
-    <h2
-      className="mb-6 text-center font-[Cormorant_Garamond,serif] text-3xl"
-      style={{ color: BLUE }}
-    >
-      {children}
-    </h2>
+    <div className="mb-7 text-center">
+      {eyebrow && (
+        <p
+          className="mb-2 text-[10px] uppercase"
+          style={{ letterSpacing: "0.45em", color: `${BLUE}99` }}
+        >
+          {eyebrow}
+        </p>
+      )}
+      <h2
+        className="font-[Cormorant_Garamond,serif] text-3xl font-medium sm:text-4xl"
+        style={{ color: BLUE, letterSpacing: "0.005em" }}
+      >
+        {children}
+      </h2>
+    </div>
   );
 }
 
@@ -271,16 +397,16 @@ function DetailRow({
   return (
     <>
       <dt
-        className="text-[10px] uppercase tracking-[0.32em] sm:text-right"
-        style={{ color: "rgba(30,74,140,0.7)" }}
+        className="text-[10px] uppercase sm:text-right"
+        style={{ letterSpacing: "0.4em", color: `${BLUE}b3` }}
       >
         {label}
       </dt>
       <dd
         className={`pb-2 text-base sm:text-lg ${
-          mono ? "font-mono text-sm sm:text-base" : "font-[Cormorant_Garamond,serif]"
+          mono ? "font-mono text-sm sm:text-base" : "font-[Cormorant_Garamond,serif] text-lg sm:text-xl"
         }`}
-        style={{ color: INK, borderBottom: "1px dotted rgba(30,74,140,0.3)" }}
+        style={{ color: INK, borderBottom: `1px dotted ${BLUE}4d` }}
       >
         {value}
       </dd>
