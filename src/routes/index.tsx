@@ -156,12 +156,32 @@ function Invitation() {
               <span className="h-px w-16 sm:w-28" style={{ background: `${CREAM_WARM}99` }} />
             </div>
 
+            <div className="mx-auto mb-5 w-[120px] sm:w-[140px]">
+              <div
+                className="relative p-1"
+                style={{
+                  background: CREAM_WARM,
+                  border: `1px solid ${CREAM_WARM}66`,
+                  outline: `1px solid ${CREAM_WARM}26`,
+                  outlineOffset: "4px",
+                }}
+              >
+                <img
+                  src={celebrationImage.url}
+                  alt="Anita Wright-Antoine"
+                  className="block aspect-[4/5] w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
             <p
               className="text-center text-xs uppercase sm:text-sm"
               style={{ letterSpacing: "0.45em", color: `${CREAM_WARM}d9` }}
             >
               In Honor of
             </p>
+
             <p
               className="mt-3 text-center font-[Cormorant_Garamond,serif] text-3xl font-medium sm:text-5xl"
               style={{ color: CREAM_WARM, letterSpacing: "0.01em" }}
